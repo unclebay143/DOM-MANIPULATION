@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="clients"></div>
+  <div id="sample"></div>
+
+  <style>
+    body{
+      text-align: center;
+    }
+    #clients table{
+      display: block;
+      margin-left: 25%;
+      font-family: cursive;
+    }
+    #clients {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #clients td, #clients th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #clients tr:nth-child(even){background-color: #f2f2f2;}
+
+    #clients tr:hover {background-color: #ddd;}
+
+    #clients th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+  <script>
+    companies = [
+      {
+        id:"1",
+        name:"Akan Global Com",
+        email:"Akan@gmail.com",
+        phone:"090877663",
+        location:"Lagos"
+      },
+      {
+        id:"2",
+        name:"Sam Global Com",
+        email:"sam@gmail.com",
+        phone:"090877663",
+        location:"Abuja"
+      },
+      {
+        id:"3",
+        name:"Baseet Global Com",
+        email:"Akan@gmail.com",
+        phone:"090877663",
+        location:"Lagos"
+      },
+      {
+        id:"4",
+        name:"Aisha Global Com",
+        email:"aisha@gmail.com",
+        phone:"090877663",
+        location:"Abuja"
+      },
+      {
+        id:"5",
+        name:"Peter Global Com",
+        email:"peter@gmail.com",
+        phone:"090877663",
+        location:"Lagos"
+      },
+      {
+        id:"6",
+        name:"Tolu Global Com",
+        email:"tolu@gmail.com",
+        phone:"090877663",
+        location:"Abuja"
+      }
+    ];
+      document.getElementById("sample").innerHTML="welcome";
+      document.getElementById("clients").innerHTML = 
+    `<table>
+        <tr>
+          <th>Company ID</th>
+          <th>Company Name</th>
+          <th>Company Email</th>
+          <th>Company Phone</th>
+          <th>Company Location</th>
+        </tr>
+      ${companies.map(
+        (profile) => `
+        <tr>
+          <td>${profile.id}</td>
+          <td>${profile.name}</td>
+          <td>${profile.email}</td>
+          <td>${profile.phone}</td>
+          <td>${profile.location}</td>
+        </tr>
+        `
+      )}
+    </table>
+    `
+  </script>
+</body>
+</html>
